@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="choose-character">
+
+        <H1> Teachers Casino</H1>
+
+        <video autoplay muted loop id="video-bg">
+
+            <source src="casinoMachine.mp4" type="video/mp4">
+    
+        </video>
+
+
+        <h1>Escolha o seu personagem</h1>
+        <div class="characters">
+            <div class="character" onclick="chooseCharacter('Marcela', 'marcela.png')">
+                <img src="marcela.png" alt="Marcela">
+                <p>Marcela</p>
+            </div>
+            <div class="character" onclick="chooseCharacter('Jorge', 'jorge.png')">
+                <img src="jorge.png" alt="Jorge">
+                <p>Jorge</p>
+            </div>
+            <div class="character" onclick="chooseCharacter('Gustavo', 'gustavo.png')">
+                <img src="gustavo.png" alt="Gustavo">
+                <p>Gustavo</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-account" style="display: none;">
+
+        
+
+        <div class="game-container">
+            <div class="header">
+                <div class="player-info">
+                    <img id="character-img" alt="Character Image">
+                    <p>Você está jogando com: <span id="character-name"></span></p>
+                </div>
+                <div class="balance">Saldo: <span id="balance">0</span></div>
+                <button id="increase-btn" onmousedown="startIncreasing()" onmouseup="stopIncreasing()">Adicionar Saldo</button>
+            </div>
+            
+            <div class="slot-machine">
+                <div id="app">
+                    <div class="doors">
+                        <div class="door">
+                            <div class="boxes"></div>
+                        </div>
+                        <div class="door">
+                            <div class="boxes"></div>
+                        </div>
+                        <div class="door">
+                            <div class="boxes"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bet-container">
+                        <label for="bet-amount">Aposta: R$</label>
+                        <input type="number" id="bet-amount" min="1" value="10">
+                        <button id="bet-all">Apostar Tudo</button>
+                    </div>
+
+                    <div class="buttons">
+                        <button id="spinner">Girar</button>
+                        <button id="reseter">Resetar</button>
+                    </div>
+
+                    <p id="message" class="info"></p>
+                    <p class="info"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
